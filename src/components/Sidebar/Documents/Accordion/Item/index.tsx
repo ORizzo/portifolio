@@ -1,12 +1,16 @@
+import { useState } from "react";
+
 import * as Accordion from "@radix-ui/react-accordion";
 
 import { usePathname } from "next/navigation";
 
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import Link from "next/link";
 
 import { IDocument } from "@/types/document";
+
+import { motion } from "framer-motion";
 
 export interface IGenericItem {
   document: IDocument;
@@ -14,7 +18,7 @@ export interface IGenericItem {
 }
 
 export interface IAccordionItem extends IGenericItem {
-  openedAccordion: string;
+  openedAccordion?: string[];
   children: JSX.Element | JSX.Element[];
 }
 
@@ -30,6 +34,8 @@ function Item({
 
   const pathName = usePathname().replace("/", "");
 
+  const [iconAngle, updateIconAngle] = useState(0);
+
   return (
     <Accordion.Item value={name} className="my-0.5">
       <div
@@ -38,15 +44,22 @@ function Item({
         }`}
       >
         <Accordion.Trigger>
-          <div className="flex w-full">
-            <div className="p-0.5 hover:bg-neutral-700 rounded-sm mr-1 my-1">
-              {openedAccordion === name ? (
-                <ChevronDown color="gray" size={16} strokeWidth={2.5} />
-              ) : (
-                <ChevronRight color="gray" size={16} strokeWidth={2.5} />
-              )}
+          <motion.div
+            onClick={() => {
+              if (iconAngle === 90) {
+                return updateIconAngle(0);
+              }
+              return updateIconAngle(90);
+            }}
+          >
+            <div className="flex w-full">
+              <div className="p-0.5 hover:bg-neutral-700 rounded-sm mr-1 my-1">
+                <motion.div animate={{ rotate: iconAngle }}>
+                  <ChevronRight color="gray" size={16} strokeWidth={2.5} />
+                </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </Accordion.Trigger>
         <Link href={linkValue}>
           <Accordion.AccordionHeader>

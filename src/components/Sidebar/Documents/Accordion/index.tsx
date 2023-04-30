@@ -14,13 +14,12 @@ function DocumentsAccordion() {
   const pathName = usePathname().replace("/", "");
 
   const TriggerRef = useRef(null);
-  const [openedAccordion, setOpenedAccordion] = useState(pathName);
+  const [openedAccordion, setOpenedAccordion] = useState<string[]>([pathName]);
 
   return (
     <Accordion.Root
-      type="single"
-      defaultValue={pathName}
-      collapsible
+      type="multiple"
+      defaultValue={[pathName]}
       ref={TriggerRef}
       onValueChange={(openedAccordionValue) => {
         setOpenedAccordion(openedAccordionValue);
