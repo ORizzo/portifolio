@@ -12,13 +12,13 @@ async function EditedAt() {
   const dateSinceLastCommitDate = moment(lastCommitDate).fromNow();
 
   return (
-    <div className="py-3 px-1 pt-4">
-      <Tooltip label={dateSinceLastCommitDate}>
-        <span className="text-sm font-semibold text-zinc-500 mx-1 hover:cursor-default">
+    <Tooltip label={dateSinceLastCommitDate}>
+      <div className="px-1 mb-4">
+        <span className="text-sm font-semibold text-zinc-500 mx-1 hover:cursor-default flex">
           Last edit at {formatedDate}
         </span>
-      </Tooltip>
-    </div>
+      </div>
+    </Tooltip>
   );
 }
 

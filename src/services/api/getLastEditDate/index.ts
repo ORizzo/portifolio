@@ -1,15 +1,19 @@
-import { nextApi } from "@/services/api";
 import { Commit } from "@/types/Github/commit";
 
 async function GetLastEditDate(): Promise<string> {
-  const api = await nextApi<Commit>("/api/github/lastCommit", {
-    next: {
-      revalidate: 60,
-    },
-    cache: "force-cache",
-  });
+  const repositoriesCommits: Commit[] = await fetch(
+    "https://api.github.com/repos/ORizzo/portifolio/commits",
+    {
+      next: {
+        revalidate: 60,
+      },
+      cache: "force-cache",
+    }
+  ).then((res) => res.json());
 
-  const lastEditDate = api.commit.author.date;
+  const lastCommit = repositoriesCommits[0];
+
+  const lastEditDate = lastCommit.commit.author.date;
 
   return lastEditDate;
 }

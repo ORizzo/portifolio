@@ -7,7 +7,7 @@ import Tooltip from "@/components/Tooltip";
 function GithubRepositoryLink() {
   return (
     <Tooltip label="Go to Github repository">
-      <div className="mx-1">
+      <div className="mx-1 mb-5">
         <Link href="https://github.com/ORizzo/portifolio" target="_blank">
           <div className="hover:bg-zinc-800 hover:cursor-pointer rounded-sm flex items-center text-zinc-500 hover:text-zinc-400">
             <div className="flex items-center">
