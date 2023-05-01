@@ -4,7 +4,7 @@ import { FunctionalSection } from "./Functional";
 
 import { DocumentsSection } from "./Documents";
 
-import { GithubSection } from "./Github/index";
+import { GithubSection } from "@/components/Sidebar/Github";
 
 export function Sidebar() {
   return (
