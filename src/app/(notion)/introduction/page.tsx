@@ -31,8 +31,8 @@ export default function Page() {
           </Topic>
           <Topic>
             <div className="flex">
-              O projeto é bem simples, e tem a interface inspirada no aplicativo
-              de notas:
+              O projeto é bem simples, e tem a interface inspirada no software
+              organização:
               <Link href="https://www.notion.so/product" target="_blank">
                 <div className="flex items-center hover:underline hover:cursor-pointer">
                   <RxNotionLogo className="mx-1" />

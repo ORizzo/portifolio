@@ -16,18 +16,18 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="w-full h-full flex justify-left items-center">
+    <div className="w-full h-full flex justify-center items-center">
       <div className="w-full mx-8">
-        <div className="font-semibold text-purple-400 text-2xl my-1">
+        <div className="font-bold text-purple-400 text-2xl my-1 w-full flex justify-center">
           {"</>"}
         </div>
-        <div className="w-full flex justify-left text-6xl font-bold">
+        <div className="w-full flex justify-center text-6xl font-bold">
           Henrique Rizzo
         </div>
-        <div className="w-1/3 flex justify-left font-medium text-2xl my-2.5 text-purple-400 text-center">
+        <div className="w-full flex justify-center font-medium text-2xl my-2.5 text-purple-400 text-center">
           Full-stack developer
         </div>
-        <div className="w-1/3 flex justify-left text-xl my-2 text-center">
+        <div className="w-full flex justify-center text-xl my-2 text-center">
           <Link href="https://nextjs.org/" target="_blank">
             <SiNextdotjs className="text-white mx-1" />
           </Link>
