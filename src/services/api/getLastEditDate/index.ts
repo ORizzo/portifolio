@@ -1,4 +1,4 @@
-import { Commit } from "@/types/Github/commit";
+import { Commit } from "@/types/github/commit";
 
 async function GetLastEditDate(): Promise<string> {
   const repositoriesCommits: Commit[] = await fetch(
