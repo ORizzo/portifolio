@@ -4,7 +4,7 @@ import { FunctionalSection } from "./Functional";
 
 import { DocumentsSection } from "./Documents";
 
-import { GithubSection } from "./GithubSection"; //Complete name cause github undercased "Github" breaking imports
+import { GithubSection } from "./Github"; //Complete name cause github undercased "Github" breaking imports
 
 export function Sidebar() {
   return (
