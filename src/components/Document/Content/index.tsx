@@ -4,7 +4,7 @@ interface IContent {
 
 function Content({ children }: IContent) {
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center bg-neutral-900">
       <div className="w-4/5 text-zinc-300">{children}</div>
     </div>
   );

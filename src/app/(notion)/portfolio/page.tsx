@@ -5,28 +5,60 @@ import { Paragraph } from "@components/Document/Content";
 import { Title, Topic } from "@components/Document/Content/Topic";
 
 export default function Page() {
+  const document = { icon: "📝", label: "Portifolio" };
+
   return (
     <div className="w-full h-full">
-      <Header document={{ icon: "👀", label: "Introdução" }} />
+      <Header document={document} />
       <Banner backgroundColor="zinc-700" />
       <Content>
         <div className="-mt-10 pb-2 flex items-center justify-right ">
           <div className="text-7xl w-[5rem] flex justify-center h-[5rem] pb-1 rounded hover:backdrop-sepia-0 hover:bg-white/10 hover:cursor-pointer">
-            📝
+            {document.icon}
           </div>
         </div>
-        <div className="text-4xl font-bold my-4 mb-8">Portfolio</div>
+        <div className="text-4xl font-bold my-4 mb-8">{document.label}</div>
         <Paragraph>
-          <Title>Quem somos?</Title>
+          <Title>Detalhei</Title>
           <Topic>
-            Somos uma empresa que tem como objetivo principal elevar o nível de
-            visibilidade do seu evento/estabelecimento, levando o mesmo a mais
-            pessoas causando uma grande difusão em midias digitais.
+            Participei do desenvolvimento da plataforma Detalhei, parte do blog
+            da empresa Harpyja. O projeto era dividido em 3 partes principais:
+            front-end, back-end e CMS.
+          </Topic>
+          <Topic>
+            Atuei em todas as partes do projeto, ajudando no desenvolvimento do
+            back-end em Nest, integrando tecnologias como Swagger, no front-end
+            criei telas responsivas seguindo guias de estilo pré estabelecidos
+            pela empresa, e no CMS criei algumas integrações com a API da
+            empresa e algumas parte da interface que utilizada para a
+            alimentação do blog.
           </Topic>
         </Paragraph>
         <Paragraph>
-          <Title>Teste</Title>
-          <Topic>asdasda</Topic>
+          <Title>IAP Cursos Online</Title>
+          <Topic>
+            Tive dois momentos dentro do projeto, trabalhando para uma
+            tercerizada que prestava serviço para a IAP, e agora, fazendo parte
+            da equipe.
+          </Topic>
+          <Topic>
+            Durante a antiga, e negligente, gestão atuei liderando outros dois
+            profissionais, cuidando de todo o front-end e suas integrações com a
+            API da empresa.
+          </Topic>
+          <Topic>
+            Ocorreram alguns problemas com a antiga gestão e faltando 10% para o
+            projeto ser entregue a equipe ficou totalmente acomodada, em algumas
+            sprints cheguei a fazer o trabalho pelos 3 devs.
+          </Topic>
+          <Topic>
+            Após a entrega do projeto, fui contratado pela IAP para manter e
+            fazer os devidos ajustes na plataforma, que, por mais que estivesse
+            sido entregue, não estava preparada para ser apresentada para os
+            usuários. Hoje trabalho mantendo todo o código fonte do frontend,
+            trazendo atualizações e melhorias, bem como administrando a
+            infraestrutura do site.
+          </Topic>
         </Paragraph>
       </Content>
     </div>
