@@ -1,4 +1,10 @@
-import { Header, Banner, Content } from "@/components/Document";
+import {
+  Header,
+  Banner,
+  Content,
+  DocumentTitle,
+  DocumentTitleIcon,
+} from "@/components/Document";
 
 import { Paragraph } from "@components/Document/Content";
 
@@ -10,14 +16,10 @@ export default function Page() {
   return (
     <div className="w-full h-full">
       <Header document={document} />
-      <Banner backgroundColor="zinc-700" />
+      <Banner backgroundColor="bg-neutral-100" />
       <Content>
-        <div className="-mt-10 pb-2 flex items-center justify-right ">
-          <div className="text-7xl w-[5rem] flex justify-center h-[5rem] pb-1 rounded hover:backdrop-sepia-0 hover:bg-white/10 hover:cursor-pointer">
-            {document.icon}
-          </div>
-        </div>
-        <div className="text-4xl font-bold my-4 mb-8">{document.label}</div>
+        <DocumentTitleIcon>{document.icon}</DocumentTitleIcon>
+        <DocumentTitle>{document.label}</DocumentTitle>
         <Paragraph>
           <Title>Setup (Acer Nitro 5)</Title>
           <Topic>Monitor Full-HD 144Hz</Topic>

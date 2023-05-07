@@ -1,23 +1,39 @@
-import { Header, Banner, Content } from "@/components/Document";
+import {
+  Header,
+  Banner,
+  Content,
+  DocumentTitle,
+  DocumentTitleIcon,
+} from "@/components/Document";
 
 import { Paragraph } from "@components/Document/Content";
 
 import { Title, Topic } from "@components/Document/Content/Topic";
 
+import Link from "next/link";
+
+import {
+  SiChakraui,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiTypescript,
+  SiMui,
+  SiReact,
+  SiRedux,
+  SiNestjs,
+  SiVercel,
+} from "react-icons/si";
+
 export default function Page() {
-  const document = { icon: "📝", label: "Portifolio" };
+  const document = { icon: "📑", label: "Portifólio" };
 
   return (
     <div className="w-full h-full">
       <Header document={document} />
-      <Banner backgroundColor="zinc-700" />
+      <Banner backgroundColor="bg-purple-500" />
       <Content>
-        <div className="-mt-10 pb-2 flex items-center justify-right ">
-          <div className="text-7xl w-[5rem] flex justify-center h-[5rem] pb-1 rounded hover:backdrop-sepia-0 hover:bg-white/10 hover:cursor-pointer">
-            {document.icon}
-          </div>
-        </div>
-        <div className="text-4xl font-bold my-4 mb-8">{document.label}</div>
+        <DocumentTitleIcon>{document.icon}</DocumentTitleIcon>
+        <DocumentTitle>{document.label}</DocumentTitle>
         <Paragraph>
           <Title>Detalhei</Title>
           <Topic>
@@ -32,6 +48,31 @@ export default function Page() {
             pela empresa, e no CMS criei algumas integrações com a API da
             empresa e algumas parte da interface que utilizada para a
             alimentação do blog.
+          </Topic>
+          <Topic>
+            <div className="flex items-center">
+              Stack utilizada no projeto:{" "}
+              <div className="flex text-xl text-center mx-2">
+                <Link href="https://nextjs.org/" target="_blank">
+                  <SiNextdotjs className="text-white mx-1" />
+                </Link>
+                <Link href="https://nodejs.org/en" target="_blank">
+                  <SiNodedotjs className="text-green-500 mx-1" />
+                </Link>
+                <Link href="https://react.dev/" target="_blank">
+                  <SiReact className="text-cyan-500 mx-1" />
+                </Link>
+                <Link href="https://mui.com/" target="_blank">
+                  <SiMui className="text-blue-600 mx-1" />
+                </Link>
+                <Link href="https://www.typescriptlang.org/" target="_blank">
+                  <SiTypescript className="text-blue-400 mx-1" />
+                </Link>
+                <Link href="https://nestjs.com/" target="_blank">
+                  <SiNestjs className="text-red-600 mx-1" />
+                </Link>
+              </div>
+            </div>
           </Topic>
         </Paragraph>
         <Paragraph>
@@ -58,6 +99,34 @@ export default function Page() {
             usuários. Hoje trabalho mantendo todo o código fonte do frontend,
             trazendo atualizações e melhorias, bem como administrando a
             infraestrutura do site.
+          </Topic>
+          <Topic>
+            <div className="flex items-center">
+              Stack utilizada no projeto:{" "}
+              <div className="flex text-xl text-center mx-2">
+                <Link href="https://nextjs.org/" target="_blank">
+                  <SiNextdotjs className="text-white mx-1" />
+                </Link>
+                <Link href="https://nodejs.org/en" target="_blank">
+                  <SiNodedotjs className="text-green-500 mx-1" />
+                </Link>
+                <Link href="https://react.dev/" target="_blank">
+                  <SiReact className="text-cyan-500 mx-1" />
+                </Link>
+                <Link href="https://chakra-ui.com/" target="_blank">
+                  <SiChakraui className="text-teal-400 mx-1" />
+                </Link>
+                <Link href="https://redux.js.org/" target="_blank">
+                  <SiRedux className="text-purple-500 mx-1" />
+                </Link>
+                <Link href="https://www.typescriptlang.org/" target="_blank">
+                  <SiTypescript className="text-blue-400 mx-1" />
+                </Link>
+                <Link href="https://vercel.com/docs" target="_blank">
+                  <SiVercel className="text-white mx-1" />
+                </Link>
+              </div>
+            </div>
           </Topic>
         </Paragraph>
       </Content>

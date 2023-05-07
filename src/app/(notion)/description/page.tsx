@@ -15,7 +15,7 @@ import Link from "next/link";
 import { RxNotionLogo } from "react-icons/rx";
 
 export default function Page() {
-  const document = { icon: "👀", label: "Introdução" };
+  const document = { icon: "📃", label: "Descrição" };
 
   return (
     <div className="w-full h-full">

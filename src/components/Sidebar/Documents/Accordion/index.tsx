@@ -34,19 +34,23 @@ function DocumentsAccordion() {
           linkValue={"/introduction"}
           document={{ icon: "👀", label: "Introdução" }}
         />
+        <SubItem
+          linkValue={"/description"}
+          document={{ icon: "📃", label: "Descrição" }}
+        />
       </Item>
       <Item
         document={{ icon: "🖥️", label: "Carreira" }}
         openedAccordion={openedAccordion}
       >
         <SubItem
-          linkValue="/portfolio"
+          linkValue="/presentation"
           document={{ icon: "📜", label: "Apresentação" }}
         />
         <SubItem linkValue="/setup" document={{ icon: "🖱️", label: "Setup" }} />
         <SubItem
-          linkValue={"/teste"}
-          document={{ icon: "💡", label: "Outros projetos" }}
+          linkValue={"/portfolio"}
+          document={{ icon: "📑", label: "Portifólio" }}
         />
       </Item>
     </Accordion.Root>
