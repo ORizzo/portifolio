@@ -1,6 +1,10 @@
+"use client";
+
 import { MessageSquare, Clock9, Star, MoreHorizontal } from "lucide-react";
 
 import { IDocument } from "@/types/document";
+
+import { useGithubStore } from "@store/zustand";
 
 interface IHeader {
   document: IDocument;
@@ -8,6 +12,8 @@ interface IHeader {
 
 function Header({ document }: IHeader) {
   const { icon, label } = document;
+
+  const lastEditAt = useGithubStore((state) => state.editedAt);
 
   return (
     <div className="w-full h-11">
@@ -19,7 +25,7 @@ function Header({ document }: IHeader) {
         </div>
         <div className="flex h-full items-center">
           <span className="text-sm text-zinc-600 mx-1 hover:cursor-default">
-            Edited Mar 8
+            Edited {lastEditAt}
           </span>
           <span className="text-sm text-zinc-300 mx-[2px] px-2 py-1 hover:bg-zinc-800 rounded hover:cursor-pointer">
             Share

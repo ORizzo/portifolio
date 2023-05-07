@@ -12,7 +12,15 @@ import { Topic } from "@components/Document/Content/Topic";
 
 import Link from "next/link";
 
-import { RxNotionLogo } from "react-icons/rx";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiReact,
+  SiRedux,
+} from "react-icons/si";
+
+import { TbBrandRadixUi } from "react-icons/tb";
 
 export default function Page() {
   const document = { icon: "📃", label: "Descrição" };
@@ -26,26 +34,45 @@ export default function Page() {
         <DocumentTitle>{document.label}</DocumentTitle>
         <Paragraph>
           <Topic>
-            Esse site é um projeto pessoal feito por mim, tendo como foco
-            exercitar habilidades de frontend. O projeto ficará disponível no
-            Github sob licença MIT, permitindo que pessoas interessadas utilizem
-            esse site como material de estudo.
+            Construi esse projeto utilizando o framework, de React, Next.Js, em
+            sua nova versão 13, explorando o que essa nova atualização pode
+            oferecer.
           </Topic>
           <Topic>
-            <div className="flex">
-              O projeto é simples, e tem a interface inspirada no software de
-              organização:
-              <Link href="https://www.notion.so/product" target="_blank">
-                <div className="flex items-center hover:underline hover:cursor-pointer">
-                  <RxNotionLogo className="mx-1" />
-                  Notion.
-                </div>
-              </Link>
+            Para estilizar utilizei a biblioteca Tailwind, por sua flexibilidade
+            e eficiência. Para os ícones usei 2 bibliotecas, react-icons e
+            lucide-react, pois em alguns casos os ícones de uma biblioteca se
+            encaixam melhor do que a da outra.
+          </Topic>
+          <Topic>
+            Para facilitar o desenvolvimento de alguns componenents fiz o uso do
+            Radix, uma biblioteca de componenents acessíveis e sem estilização.
+          </Topic>
+          <Topic>
+            Como linguagem utilizei o Typescript, para poder contar com tipagem
+            e dar mais segurança e confiabilidade ao código.
+          </Topic>
+          <Topic>
+            <div className="flex items-center">
+              Stack utilizada no projeto:{" "}
+              <div className="flex text-xl text-center mx-2">
+                <Link href="https://nextjs.org/" target="_blank">
+                  <SiNextdotjs className="text-white mx-1" />
+                </Link>
+                <Link href="https://react.dev/" target="_blank">
+                  <SiReact className="text-cyan-500 mx-1" />
+                </Link>
+                <Link href="https://tailwindcss.com/" target="_blank">
+                  <SiTailwindcss className="text-cyan-400 mx-1" />
+                </Link>
+                <Link href="https://www.radix-ui.com/" target="_blank">
+                  <TbBrandRadixUi className="text-white mx-1" />
+                </Link>
+                <Link href="https://www.typescriptlang.org/" target="_blank">
+                  <SiTypescript className="text-blue-400 mx-1" />
+                </Link>
+              </div>
             </div>
-          </Topic>
-          <Topic>
-            O site ainda está em desenvolvimento. Sujestões serão aceitas caso
-            sejam pertinentes, e expressadas com educação.
           </Topic>
         </Paragraph>
       </Content>
