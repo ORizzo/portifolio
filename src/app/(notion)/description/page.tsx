@@ -17,7 +17,7 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiReact,
-  SiRedux,
+  SiFoodpanda,
 } from "react-icons/si";
 
 import { TbBrandRadixUi } from "react-icons/tb";
@@ -53,8 +53,15 @@ export default function Page() {
             e dar mais segurança e confiabilidade ao código.
           </Topic>
           <Topic>
+            Para fazer a globalização de alguns estados da aplicação, utilizei o
+            Zustand, uma alternativa ao Redux, devido a sua facilidade de
+            utilizar, pois se baseia em hooks, não há necessidade de utilizar
+            providers, e a configuração necessária para iniciar a utilizar é
+            zero, é só importar o zustand, criar os stores e exportar o hook.
+          </Topic>
+          <Topic>
             <div className="flex items-center">
-              Stack utilizada no projeto:{" "}
+              Stack utilizada no projeto:
               <div className="flex text-xl text-center mx-2">
                 <Link href="https://nextjs.org/" target="_blank">
                   <SiNextdotjs className="text-white mx-1" />
@@ -70,6 +77,12 @@ export default function Page() {
                 </Link>
                 <Link href="https://www.typescriptlang.org/" target="_blank">
                   <SiTypescript className="text-blue-400 mx-1" />
+                </Link>
+                <Link
+                  href="https://docs.pmnd.rs/zustand/getting-started/introduction"
+                  target="_blank"
+                >
+                  <SiFoodpanda className="text-zinc-950 mx-1" />
                 </Link>
               </div>
             </div>

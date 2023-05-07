@@ -21,7 +21,9 @@ export function Item({
 
   return (
     <Link href={path}>
-      <div className="hover:bg-zinc-800 hover:cursor-pointer rounded-sm flex items-center">
+      <div
+        className={`hover:bg-zinc-800 hover:cursor-pointer rounded-sm flex items-center`}
+      >
         <div className="flex items-center mx-1">
           <div className="px-3 py-2 w-9">
             <Icon
