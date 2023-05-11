@@ -8,7 +8,11 @@ function FavoritesSection() {
   const state = useFavoritesStore((state) => state);
 
   return (
-    <div className="mx-1 px-3 mt-3 mb-1">
+    <div
+      className={`mx-1 px-3 mt-3 mb-1 ${
+        state.favoritedDocuments.length == 0 ? "hidden" : ""
+      }`}
+    >
       <h3 className="text-xs font-bold text-zinc-600 hover:cursor-pointer">
         Favorites
       </h3>
