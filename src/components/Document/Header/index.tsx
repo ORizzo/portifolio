@@ -4,7 +4,9 @@ import { MessageSquare, Clock9, Star, MoreHorizontal } from "lucide-react";
 
 import { IDocument } from "@/types/document";
 
-import { useGithubStore } from "@store/zustand";
+import { useGithubStore } from "@/store/github";
+
+import { useFavoritesStore } from "@/store/favorites";
 
 interface IHeader {
   document: IDocument;
@@ -14,6 +16,14 @@ function Header({ document }: IHeader) {
   const { icon, label } = document;
 
   const lastEditAt = useGithubStore((state) => state.editedAt);
+
+  const state = useFavoritesStore((state) => state);
+
+  const thatDocument = state.favoritedDocuments.filter(
+    (document) => document.label === label
+  );
+
+  const isThatDocumentFavorited = thatDocument.length > 0;
 
   return (
     <div className="w-full h-11">
@@ -36,11 +46,19 @@ function Header({ document }: IHeader) {
           <span className="text-sm text-zinc-300 mx-[2px] px-2 py-1.5 hover:bg-zinc-800 rounded hover:cursor-pointer">
             <Clock9 size={18} />
           </span>
-          <span className="text-sm mx-[2px] px-2 py-1.5 hover:bg-zinc-800 rounded hover:cursor-pointer">
+          <span
+            className="text-sm mx-[2px] px-2 py-1.5 hover:bg-zinc-800 rounded hover:cursor-pointer"
+            onClick={() => {
+              if (isThatDocumentFavorited) {
+                return state.removeADocument(label);
+              }
+              return state.favoriteADocument(document);
+            }}
+          >
             <Star
               size={18}
-              color="rgb(246, 192, 80)"
-              fill="rgb(246, 192, 80)"
+              color={isThatDocumentFavorited ? "rgb(246, 192, 80)" : "#fff"}
+              fill={isThatDocumentFavorited ? "rgb(246, 192, 80)" : "#27272a"}
             />
           </span>
           <span className="text-sm mx-[2px] px-1 py-0.5 hover:bg-zinc-800 rounded hover:cursor-pointer">
@@ -51,5 +69,4 @@ function Header({ document }: IHeader) {
     </div>
   );
 }
-
 export { Header };

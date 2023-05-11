@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Header,
   Banner,
@@ -55,7 +57,7 @@ export default function Page() {
           <Topic>
             Para fazer a globalização de alguns estados da aplicação, utilizei o
             Zustand, uma alternativa ao Redux, devido a sua facilidade de
-            utilizar, pois se baseia em hooks, não há necessidade de utilizar
+            utilizar, pois se baseia em hooks, e não há necessidade de utilizar
             providers, e a configuração necessária para iniciar a utilizar é
             zero, é só importar o zustand, criar os stores e exportar o hook.
           </Topic>

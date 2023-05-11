@@ -8,9 +8,10 @@ import { usePathname } from "next/navigation";
 
 interface ISubItemInterface extends IGenericItem {
   linkValue: string;
+  ml?: string;
 }
 
-function SubItem({ linkValue, document }: ISubItemInterface) {
+function SubItem({ linkValue, document, ml = "ml-6" }: ISubItemInterface) {
   const pathName = usePathname();
 
   const { icon, label } = document;
@@ -22,7 +23,7 @@ function SubItem({ linkValue, document }: ISubItemInterface) {
           pathName === linkValue ? "bg-zinc-800" : ""
         }`}
       >
-        <div className="ml-6 flex">
+        <div className={`${ml} flex`}>
           <div className="flex items-center">
             <div className="rounded-sm mr-1 flex h-full items-center">
               <BsDot />

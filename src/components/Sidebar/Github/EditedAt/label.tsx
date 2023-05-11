@@ -2,7 +2,7 @@
 
 import Tooltip from "@/components/Tooltip";
 
-import { useGithubStore } from "@store/zustand";
+import { useGithubStore } from "@/store/github";
 
 function EditedAtLabel({
   dateSinceLastCommitDate,
