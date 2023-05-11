@@ -2,11 +2,14 @@ import { create } from "zustand";
 
 import { persist } from "zustand/middleware";
 
-import type { IDocument } from "@/types/document";
+import type { IFavoriteDocument, IDocument } from "@/types/document";
 
 export interface IFavoriteState {
-  favoritedDocuments: Array<IDocument>;
-  favoriteADocument: (documentToFavorite: IDocument) => void;
+  favoritedDocuments: Array<IFavoriteDocument>;
+  favoriteADocument: (
+    documentToFavorite: IDocument,
+    documentURL: string
+  ) => void;
   removeADocument: (label: string) => void;
 }
 
@@ -14,11 +17,11 @@ const useFavoritesStore = create<IFavoriteState>()(
   persist<IFavoriteState>(
     (set, get) => ({
       favoritedDocuments: [],
-      favoriteADocument: (documentToFavorite) =>
+      favoriteADocument: (documentToFavorite, documentURL) =>
         set(() => {
           const newFavoriteDocuments = get().favoritedDocuments;
 
-          newFavoriteDocuments.push(documentToFavorite);
+          newFavoriteDocuments.push({ ...documentToFavorite, documentURL });
 
           return {
             favoritedDocuments: newFavoriteDocuments,

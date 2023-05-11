@@ -8,6 +8,8 @@ import { useGithubStore } from "@/store/github";
 
 import { useFavoritesStore } from "@/store/favorites";
 
+import { usePathname } from "next/navigation";
+
 interface IHeader {
   document: IDocument;
 }
@@ -15,11 +17,15 @@ interface IHeader {
 function Header({ document }: IHeader) {
   const { icon, label } = document;
 
+  const pathname = usePathname();
+
+  console.log(pathname);
+
   const lastEditAt = useGithubStore((state) => state.editedAt);
 
-  const state = useFavoritesStore((state) => state);
+  const favoriteState = useFavoritesStore((state) => state);
 
-  const thatDocument = state.favoritedDocuments.filter(
+  const thatDocument = favoriteState.favoritedDocuments.filter(
     (document) => document.label === label
   );
 
@@ -50,9 +56,10 @@ function Header({ document }: IHeader) {
             className="text-sm mx-[2px] px-2 py-1.5 hover:bg-zinc-800 rounded hover:cursor-pointer"
             onClick={() => {
               if (isThatDocumentFavorited) {
-                return state.removeADocument(label);
+                return favoriteState.removeADocument(label);
               }
-              return state.favoriteADocument(document);
+
+              return favoriteState.favoriteADocument(document, pathname);
             }}
           >
             <Star
