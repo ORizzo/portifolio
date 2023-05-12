@@ -9,7 +9,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "test": "echo \"[TEST] - Running tests\"",
-    "cy": "start-server-and-test dev http://localhost:3000 \"cypress run\"",
+    "cy": "npm run build && start-server-and-test start http://localhost:3000 \"cypress run\"",
     "cy:open": "cypress open"
   },
   "dependencies": {

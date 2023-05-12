@@ -19,8 +19,6 @@ function Header({ document }: IHeader) {
 
   const pathname = usePathname();
 
-  console.log(pathname);
-
   const lastEditAt = useGithubStore((state) => state.editedAt);
 
   const favoriteState = useFavoritesStore((state) => state);
