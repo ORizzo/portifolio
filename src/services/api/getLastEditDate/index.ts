@@ -7,7 +7,6 @@ async function GetLastEditDate(): Promise<string> {
       next: {
         revalidate: 60,
       },
-      cache: "force-cache",
     }
   ).then((res) => res.json());
 
