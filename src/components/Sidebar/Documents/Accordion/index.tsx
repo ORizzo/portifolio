@@ -25,6 +25,7 @@ function DocumentsAccordion() {
         setOpenedAccordion(openedAccordionValue);
       }}
       className={"mx-1"}
+      id="radix-accordion"
     >
       <Item
         document={{ icon: "🧪", label: "Esse projeto" }}

@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 
 import { ChevronRight } from "lucide-react";
 
-import Link from "next/link";
-
 import { IDocument } from "@/types/document";
 
 import { motion } from "framer-motion";
@@ -37,7 +35,7 @@ function Item({
   const [iconAngle, updateIconAngle] = useState(0);
 
   return (
-    <Accordion.Item value={name} className="my-0.5">
+    <Accordion.Item value={name} className="my-0.5" id="accordion-item">
       <Accordion.AccordionHeader className="w-full">
         <Accordion.Trigger className="w-full">
           <motion.div
@@ -63,10 +61,10 @@ function Item({
                 </div>
 
                 <div className="flex font-semibold text-gray-300 items-center w-full">
-                  <div className="flex text-md">{icon}</div>
-                  <div className="text-sm pl-0.5 pr-1 py-0.5 my-1 rounded w-full flex">
+                  <span className="flex text-md">{icon}</span>
+                  <h3 className="text-sm pl-0.5 pr-1 py-0.5 my-1 rounded w-full flex">
                     {label}
-                  </div>
+                  </h3>
                 </div>
               </div>
             </div>

@@ -15,7 +15,7 @@ function EditedAtLabel({
   setEditedAt(formatedDate);
   return (
     <Tooltip label={dateSinceLastCommitDate}>
-      <div className="px-1 mb-4">
+      <div className="px-1 mb-4" id="github-edited-at-tooltip">
         <span className="text-sm font-semibold text-zinc-500 mx-1 hover:cursor-default flex">
           Last edit at {formatedDate}
         </span>

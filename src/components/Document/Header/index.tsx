@@ -9,17 +9,20 @@ import { useGithubStore } from "@/store/github";
 import { useFavoritesStore } from "@/store/favorites";
 
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface IHeader {
   document: IDocument;
 }
 
 function Header({ document }: IHeader) {
+  const [lastEditAt, setLastEditAt] = useState<string>("Waiting for github...");
+
   const { icon, label } = document;
 
   const pathname = usePathname();
 
-  const lastEditAt = useGithubStore((state) => state.editedAt);
+  const state = useGithubStore((state) => state);
 
   const favoriteState = useFavoritesStore((state) => state);
 
@@ -28,6 +31,10 @@ function Header({ document }: IHeader) {
   );
 
   const isThatDocumentFavorited = thatDocument.length > 0;
+
+  useEffect(() => {
+    setLastEditAt(state.editedAt);
+  }, [state]);
 
   return (
     <div className="w-full h-11">

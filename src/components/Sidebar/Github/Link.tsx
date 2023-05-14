@@ -8,7 +8,11 @@ function GithubRepositoryLink() {
   return (
     <Tooltip label="Go to Github repository">
       <div className="mx-1 mb-5">
-        <Link href="https://github.com/ORizzo/portifolio" target="_blank">
+        <Link
+          href="https://github.com/ORizzo/portifolio"
+          target="_blank"
+          id="github-link-button"
+        >
           <div className="hover:bg-zinc-800 hover:cursor-pointer rounded-sm flex items-center text-zinc-500 hover:text-zinc-400">
             <div className="flex items-center">
               <div className="px-2 py-2">

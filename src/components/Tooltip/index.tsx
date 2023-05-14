@@ -14,7 +14,9 @@ function Tooltip({
   return (
     <RadixTooltip.Provider delayDuration={100}>
       <RadixTooltip.Root>
-        <RadixTooltip.Trigger>{children}</RadixTooltip.Trigger>
+        <RadixTooltip.Trigger className="radix-tooltip-trigger">
+          {children}
+        </RadixTooltip.Trigger>
         <RadixTooltip.Portal>
           <RadixTooltip.Content align={align}>
             <div className="text-sm font-semibold text-zinc-500 mb-1.5 hover:cursor-default">

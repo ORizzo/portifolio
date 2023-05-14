@@ -1,5 +1,7 @@
 import "../../src/app/globals.css";
 
+import "cypress-real-events/support";
+
 import "./commands";
 
 import { mount } from "cypress/react18";
