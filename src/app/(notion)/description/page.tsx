@@ -20,6 +20,7 @@ import {
   SiTypescript,
   SiReact,
   SiFoodpanda,
+  SiCypress,
 } from "react-icons/si";
 
 import { TbBrandRadixUi } from "react-icons/tb";
@@ -62,6 +63,11 @@ export default function Page() {
             zero, é só importar o zustand, criar os stores e exportar o hook.
           </Topic>
           <Topic>
+            Para fazer os testes de integração, E2E (end-to-end), e de
+            funcionalidades, utilizei o Cypress, framework de testes com suporte
+            para E2E e api para interação com a árvore DOM.
+          </Topic>
+          <Topic>
             <div className="flex items-center">
               Stack utilizada no projeto:
               <div className="flex text-xl text-center mx-2">
@@ -73,6 +79,9 @@ export default function Page() {
                 </Link>
                 <Link href="https://tailwindcss.com/" target="_blank">
                   <SiTailwindcss className="text-cyan-400 mx-1" />
+                </Link>
+                <Link href="https://www.cypress.io/" target="_blank">
+                  <SiCypress className="text-emerald-400 mx-1" />
                 </Link>
                 <Link href="https://www.radix-ui.com/" target="_blank">
                   <TbBrandRadixUi className="text-white mx-1" />

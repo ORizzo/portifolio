@@ -10,6 +10,7 @@ import {
   SiReact,
   SiRedux,
   SiNestjs,
+  SiCypress,
 } from "react-icons/si";
 
 import Link from "next/link";
@@ -57,6 +58,9 @@ export default function Page() {
           </Link>
           <Link href="https://nestjs.com/" target="_blank">
             <SiNestjs className="text-red-600 mx-1" />
+          </Link>
+          <Link href="https://www.cypress.io/" target="_blank">
+            <SiCypress className="text-emerald-400 mx-1" />
           </Link>
           <Link href="https://jestjs.io/pt-BR/" target="_blank">
             <SiJest className="text-rose-700 mx-1" />
