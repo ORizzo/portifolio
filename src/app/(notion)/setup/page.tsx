@@ -25,7 +25,7 @@ export default function Page() {
           <Topic>Monitor Full-HD 144Hz</Topic>
           <Topic>AMD Ryzen 7 4800H</Topic>
           <Topic>GeForce GTX 1650</Topic>
-          <Topic>Memória RAM, 12GB 3200MHz DDR4</Topic>
+          <Topic>2x16GB 3200MHz DDR4</Topic>
           <Topic>2x 500 Gb SSD NVMe</Topic>
         </Paragraph>
         <Paragraph>
