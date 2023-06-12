@@ -44,10 +44,10 @@ function DocumentsAccordion() {
         document={{ icon: "🖥️", label: "Carreira" }}
         openedAccordion={openedAccordion}
       >
-        <SubItem
+        {/**<SubItem
           linkValue="/presentation"
           document={{ icon: "📜", label: "Apresentação" }}
-        />
+        /> */}
         <SubItem linkValue="/setup" document={{ icon: "🖱️", label: "Setup" }} />
         <SubItem
           linkValue={"/portfolio"}

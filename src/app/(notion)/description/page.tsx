@@ -37,7 +37,7 @@ export default function Page() {
         <DocumentTitle>{document.label}</DocumentTitle>
         <Paragraph>
           <Topic>
-            Construi esse projeto utilizando o framework, de React, Next.Js, em
+            Construi esse projeto utilizando o framework de React, Next.Js, em
             sua nova versão 13, explorando o que essa nova atualização pode
             oferecer.
           </Topic>
