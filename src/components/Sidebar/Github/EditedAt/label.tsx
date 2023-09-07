@@ -12,7 +12,9 @@ function EditedAtLabel({
   formatedDate: string;
 }) {
   const setEditedAt = useGithubStore((state) => state.setEditedAt);
+
   setEditedAt(formatedDate);
+
   return (
     <Tooltip label={dateSinceLastCommitDate}>
       <div className="px-1 mb-4" id="github-edited-at-tooltip">

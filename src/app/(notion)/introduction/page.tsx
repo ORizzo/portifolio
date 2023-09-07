@@ -26,10 +26,10 @@ export default function Page() {
         <DocumentTitle>{document.label}</DocumentTitle>
         <Paragraph>
           <Topic>
-            Esse site é um projeto pessoal feito por mim, tendo como foco
-            exercitar habilidades de frontend. O projeto ficará disponível no
-            Github sob licença MIT, permitindo que pessoas interessadas utilizem
-            esse site como material de estudo.
+            Esse site é um projeto pessoal, tendo como foco exercitar minhas
+            habilidades no desenvolvimento frontend. O projeto ficará disponível
+            no Github sob licença MIT, permitindo que pessoas interessadas
+            utilizem esse site como material de estudo.
           </Topic>
           <Topic>
             <div className="flex">
@@ -44,7 +44,7 @@ export default function Page() {
             </div>
           </Topic>
           <Topic>
-            O site ainda está em desenvolvimento. Sujestões serão aceitas caso
+            O site ainda está em desenvolvimento. Sugestões serão aceitas caso
             sejam pertinentes, e expressadas com educação.
           </Topic>
         </Paragraph>

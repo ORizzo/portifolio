@@ -1,40 +1,18 @@
-"use client";
+import { Suspense } from "react";
 
-import { MessageSquare, Clock9, Star, MoreHorizontal } from "lucide-react";
+import { MessageSquare, Clock9, MoreHorizontal, Star } from "lucide-react";
 
 import { IDocument } from "@/types/document";
 
-import { useGithubStore } from "@/store/github";
-
-import { useFavoritesStore } from "@/store/favorites";
-
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { EditedAt } from "./EditedAt";
+import { FavoriteButton } from "./FavoriteButton";
 
 interface IHeader {
   document: IDocument;
 }
 
 function Header({ document }: IHeader) {
-  const [lastEditAt, setLastEditAt] = useState<string>("Waiting for github...");
-
   const { icon, label } = document;
-
-  const pathname = usePathname();
-
-  const state = useGithubStore((state) => state);
-
-  const favoriteState = useFavoritesStore((state) => state);
-
-  const thatDocument = favoriteState.favoritedDocuments.filter(
-    (document) => document.label === label
-  );
-
-  const isThatDocumentFavorited = thatDocument.length > 0;
-
-  useEffect(() => {
-    setLastEditAt(state.editedAt);
-  }, [state]);
 
   return (
     <div className="w-full h-11">
@@ -45,9 +23,9 @@ function Header({ document }: IHeader) {
           </h2>
         </div>
         <div className="flex h-full items-center">
-          <span className="text-sm text-zinc-600 mx-1 hover:cursor-default">
-            Edited {lastEditAt}
-          </span>
+          <Suspense>
+            <EditedAt />
+          </Suspense>
           <span className="text-sm text-zinc-300 mx-[2px] px-2 py-1 hover:bg-zinc-800 rounded hover:cursor-pointer">
             Share
           </span>
@@ -57,22 +35,9 @@ function Header({ document }: IHeader) {
           <span className="text-sm text-zinc-300 mx-[2px] px-2 py-1.5 hover:bg-zinc-800 rounded hover:cursor-pointer">
             <Clock9 size={18} />
           </span>
-          <span
-            className="text-sm mx-[2px] px-2 py-1.5 hover:bg-zinc-800 rounded hover:cursor-pointer"
-            onClick={() => {
-              if (isThatDocumentFavorited) {
-                return favoriteState.removeADocument(label);
-              }
-
-              return favoriteState.favoriteADocument(document, pathname);
-            }}
-          >
-            <Star
-              size={18}
-              color={isThatDocumentFavorited ? "rgb(246, 192, 80)" : "#fff"}
-              fill={isThatDocumentFavorited ? "rgb(246, 192, 80)" : "#27272a"}
-            />
-          </span>
+          <Suspense fallback={<Star size={18} />}>
+            <FavoriteButton document={document} />
+          </Suspense>
           <span className="text-sm mx-[2px] px-1 py-0.5 hover:bg-zinc-800 rounded hover:cursor-pointer">
             <MoreHorizontal size={26} strokeWidth={2} />
           </span>
